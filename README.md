@@ -53,3 +53,7 @@ valueinsert = input("Inserta el valor que deseas insertar: ")
 
 response = supabase.table(tabla).update({camposelect: valueinsert}).eq(idName, idNumber).execute()
 ```
+
+Recuerda que estos son ejemplos básicos y que puedes personalizarlos según tus necesidades específicas. Para más detalles sobre las operaciones disponibles y las opciones de la API de Supabase, consulta la documentación oficial de Supabase.
+
+¡Espero que esta documentación te sea útil!
