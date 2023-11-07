@@ -18,3 +18,23 @@ for x in range(len(campos)):
 
 print('Esta es la lista de los campos en: '+table_name)
 print(campoIndividual)
+
+while True:
+    idName = input("Escribe el nombre del campo Id: ")
+    if idName is None :
+        print(f"'{idName}' no es un campo válido para la tabla. Por favor, ingresa un campo válido.")
+        continue
+
+    idNumber = int(input("Escribe la Id: "))
+    if idNumber < 0:
+        print("La Id debe ser un número entero positivo. Inténtalo de nuevo.")
+        continue
+
+    camposelect = input("Escribe el nombre del campo: ")
+    if camposelect not in campos:
+        print(f"'{camposelect}' no es un campo válido para la tabla. Por favor, ingresa un campo válido.")
+        continue
+
+    valueinsert = input("Inserta el valor que deseas insertar: ")
+
+    response = supabase.table(table_name).update({camposelect: valueinsert}).eq(idName, idNumber).execute()
